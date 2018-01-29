@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/KotlinUtil.iml" filepath="$PROJECT_DIR$/KotlinUtil.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kotlinutillib/kotlinutillib.iml" filepath="$PROJECT_DIR$/kotlinutillib/kotlinutillib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/utilsample/utilsample.iml" filepath="$PROJECT_DIR$/utilsample/utilsample.iml" />
+    </modules>
+  </component>
+</project>
