@@ -1,5 +1,7 @@
 package com.siberiadante.kotlinutil
 
+import android.app.Application
+
 /**
  * @Created  SiberiaDante
  * @Describe：
@@ -9,5 +11,5 @@ package com.siberiadante.kotlinutil
  * @GitHub: https://github.com/SiberiaDante
  * @Blogs: http://www.cnblogs.com/shen-hua/
  */
-class KotlinUtilApp {
+class KotlinUtilApp : Application() {
 }
