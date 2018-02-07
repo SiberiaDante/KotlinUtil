@@ -1,1 +1,1 @@
-include ':utilsample', ':kotlinutillib'
+include ':kotlinutillib', ':kutilsample'

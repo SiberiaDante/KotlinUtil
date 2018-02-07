@@ -13,7 +13,7 @@ import android.net.NetworkInfo
  * @GitHub: https://github.com/SiberiaDante
  * @Blogs: http://www.cnblogs.com/shen-hua/
  */
-class SDNetworkUtil {
+object SDNetworkUtil {
     /**
      * 网络是否连接
      * 需要权限{@code <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>}

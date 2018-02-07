@@ -11,12 +11,13 @@ import android.content.Context
  * @GitHub: https://github.com/SiberiaDante
  * @Blogs: http://www.cnblogs.com/shen-hua/
  */
-class SDTranstionUtil {
+object SDTranstionUtil {
+
     /**
      * dip to  px
      */
     fun dip2px(context: Context, dipValue: Float): Float {
-        var density = context.resources.displayMetrics.density
+        val density = context.resources.displayMetrics.density
         return density * dipValue + 0.5f
     }
 

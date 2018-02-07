@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/KotlinUtil.iml" filepath="$PROJECT_DIR$/KotlinUtil.iml" />
       <module fileurl="file://$PROJECT_DIR$/kotlinutillib/kotlinutillib.iml" filepath="$PROJECT_DIR$/kotlinutillib/kotlinutillib.iml" />
-      <module fileurl="file://$PROJECT_DIR$/utilsample/utilsample.iml" filepath="$PROJECT_DIR$/utilsample/utilsample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kutilsample/kutilsample.iml" filepath="$PROJECT_DIR$/kutilsample/kutilsample.iml" />
     </modules>
   </component>
 </project>
