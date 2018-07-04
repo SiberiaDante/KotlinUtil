@@ -1,5 +1,6 @@
 package com.siberiadante.kotlinutil
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkInfo
@@ -13,11 +14,12 @@ import android.net.NetworkInfo
  * @GitHub: https://github.com/SiberiaDante
  * @Blogs: http://www.cnblogs.com/shen-hua/
  */
-object SDNetworkUtil {
+object KNetworkUtil {
     /**
-     * 网络是否连接
-     * 需要权限{@code <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>}
+     * udge network is connection
+     * need permission{@code <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>}
      */
+    @SuppressLint("MissingPermission")
     fun isNetConneted(context: Context): Boolean {
         val connectManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         val networkInfo: NetworkInfo? = connectManager.activeNetworkInfo
@@ -30,10 +32,11 @@ object SDNetworkUtil {
     }
 
     /**
-     * 网络是否连接
-     * 需要权限{@code <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>}
+     * judge network is connection
+     * need permission{@code <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>}
      */
-    fun isNetworkConnected(context: Context, typeMobile: Int): Boolean {
+    @SuppressLint("MissingPermission")
+    fun isNetConnected(context: Context, typeMobile: Int): Boolean {
         if (!isNetConneted(context)) {
             return false
         }
@@ -47,18 +50,18 @@ object SDNetworkUtil {
     }
 
     /**
-     * 是否手机网络连接
+     * mobile network connection
      */
     fun isPhoneNetConnected(context: Context): Boolean {
         val typeMobile = ConnectivityManager.TYPE_MOBILE
-        return isNetworkConnected(context, typeMobile)
+        return isNetConnected(context, typeMobile)
     }
 
     /**
-     * 是否无线网络连接
+     * wifi network connection
      */
     fun isWifiNetConnected(context: Context): Boolean {
         val typeMobile = ConnectivityManager.TYPE_WIFI
-        return isNetworkConnected(context, typeMobile)
+        return isNetConnected(context, typeMobile)
     }
 }

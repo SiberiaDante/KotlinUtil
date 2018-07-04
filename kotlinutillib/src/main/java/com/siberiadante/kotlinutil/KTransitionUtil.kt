@@ -11,10 +11,10 @@ import android.content.Context
  * @GitHub: https://github.com/SiberiaDante
  * @Blogs: http://www.cnblogs.com/shen-hua/
  */
-object SDTranstionUtil {
+object KTransitionUtil {
 
     /**
-     * dip to  px
+     * dip transition to  px
      */
     fun dip2px(context: Context, dipValue: Float): Float {
         val density = context.resources.displayMetrics.density
@@ -22,10 +22,26 @@ object SDTranstionUtil {
     }
 
     /**
-     * px to dip
+     * px transition to dip
      */
     fun px2dip(context: Context, pxValue: Float): Int {
         val scale: Float = context.resources.displayMetrics.density
         return (pxValue / scale + 0.5f).toInt()
+    }
+
+    /**
+     * sp transition to px
+     */
+    fun sp2px(context: Context, pxValue: Float): Float {
+        var scaledDensity = context.resources.displayMetrics.scaledDensity
+        return scaledDensity * pxValue + 0.5f
+    }
+
+    /**
+     * px transition to sp
+     */
+    fun px2sp(context: Context, spValue: Float): Int {
+        var scaledDensity = context.resources.displayMetrics.scaledDensity
+        return (spValue / scaledDensity + 0.5f).toInt()
     }
 }

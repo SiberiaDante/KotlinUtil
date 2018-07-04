@@ -9,13 +9,19 @@ package com.siberiadante.kotlinutil
  * @GitHub: https://github.com/SiberiaDante
  * @Blogs: http://www.cnblogs.com/shen-hua/
  */
-object SDDateUtil {
+object KDateUtil {
 
     /**
-     * 获取时间戳
+     * get time stamp
      */
     fun getTimeStamp(): Long {
-        return System.currentTimeMillis() / 1000
+        return getTimeStampMillis() / 1000
     }
 
+    /**
+     * get time stamp in milliseconds
+     */
+    fun getTimeStampMillis(): Long {
+        return System.currentTimeMillis()
+    }
 }

@@ -1,18 +1,29 @@
 package com.siberiadante.kutilsample
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.GridLayoutManager
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import com.siberiadante.kotlinutil.KActivityMangerUtil
+import com.siberiadante.kutilsample.adapter.MainAdapter
+import com.siberiadante.kutilsample.model.UtilModel
+import com.siberiadante.kutilsample.ui.SDDateUtilsActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
+import kotlinx.android.synthetic.main.content_main.*
 
+/**
+ * https://kotlintc.com/articles/3532
+ */
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
-
+    private val tag = MainActivity::class.java.simpleName.toString()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -29,6 +40,28 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         toggle.syncState()
 
         nav_view.setNavigationItemSelectedListener(this)
+        initView()
+    }
+
+    private fun initView() {
+        KActivityMangerUtil.addActivity(this)
+        Log.i(tag, "----------------------------------")
+        var datas = ArrayList<UtilModel<*>>()
+        getDataContent(datas)
+        rv_main.layoutManager = GridLayoutManager(this, 2)
+        rv_main.adapter = MainAdapter(this, datas, {
+            val intent = Intent()
+            intent.setClass(this, it.cls as Class<*>?)
+            startActivity(intent)
+        })
+    }
+
+    private fun getDataContent(datas: ArrayList<UtilModel<*>>) {
+        datas.add(UtilModel("KDateUtil", SDDateUtilsActivity::class.java))
+        datas.add(UtilModel("SDLogUtil", SDDateUtilsActivity::class.java))
+        datas.add(UtilModel("SDNetWorkUtil", SDDateUtilsActivity::class.java))
+        datas.add(UtilModel("SDTimerUtil", SDDateUtilsActivity::class.java))
+        datas.add(UtilModel("KTransitionUtil", SDDateUtilsActivity::class.java))
     }
 
     override fun onBackPressed() {
