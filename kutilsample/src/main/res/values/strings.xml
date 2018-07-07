@@ -5,4 +5,11 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+    <string name="title_activity_manager_util">KActivityManagerU</string>
+    <string name="title_date_util">KDateUtil</string>
+    <string name="title_device_util">KDeviceUtil</string>
+    <string name="title_log_util">KLogUtil</string>
+    <string name="title_network_util">SDNetWorkUtil</string>
+    <string name="title_timer_util">KTimerUtil</string>
+    <string name="title_transition_util">KTransitionUtil</string>
 </resources>

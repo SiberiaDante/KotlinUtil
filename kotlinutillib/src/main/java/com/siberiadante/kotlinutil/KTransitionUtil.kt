@@ -1,23 +1,35 @@
 package com.siberiadante.kotlinutil
 
 import android.content.Context
+import android.support.v7.app.AppCompatActivity
+import android.util.DisplayMetrics
+
 
 /**
- * @Created  SiberiaDante
- * @Describe：
  * @CreateTime: 2018/1/29
- * @UpDateTime:
- * @Email: 2654828081@qq.com
- * @GitHub: https://github.com/SiberiaDante
- * @Blogs: http://www.cnblogs.com/shen-hua/
+ * @UpDateTime:2018/1/29
+ * @CreateBy:SiberiaDante
+ * @Email:2654828081@qq.com
+ * @Github:https://github.com/SiberiaDante
+ * @Blog:http://www.cnblogs.com/shen-hua/
+ * @Describe:
  */
 object KTransitionUtil {
+
+    /**
+     * get screen density
+     */
+    fun getDensity(activity: AppCompatActivity): Float {
+        var displayMetrics = DisplayMetrics()
+        activity.windowManager.defaultDisplay.getMetrics(displayMetrics)
+        return displayMetrics.density
+    }
 
     /**
      * dip transition to  px
      */
     fun dip2px(context: Context, dipValue: Float): Float {
-        val density = context.resources.displayMetrics.density
+        val density = KotlinUtil.getContext().resources.displayMetrics.density
         return density * dipValue + 0.5f
     }
 

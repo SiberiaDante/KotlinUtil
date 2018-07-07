@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="BaseContentTextView">
+        <item name="android:padding">@dimen/k_ten</item>
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:textSize">@dimen/k_font_14</item>
+    </style>
+</resources>

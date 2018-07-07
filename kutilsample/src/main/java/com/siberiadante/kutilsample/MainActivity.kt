@@ -14,7 +14,9 @@ import android.view.MenuItem
 import com.siberiadante.kotlinutil.KActivityMangerUtil
 import com.siberiadante.kutilsample.adapter.MainAdapter
 import com.siberiadante.kutilsample.model.UtilModel
-import com.siberiadante.kutilsample.ui.SDDateUtilsActivity
+import com.siberiadante.kutilsample.ui.utiltest.KDateUtilsActivity
+import com.siberiadante.kutilsample.ui.utiltest.KDeviceUtilActivity
+import com.siberiadante.kutilsample.ui.utiltest.KTransitionUtilActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.content_main.*
@@ -41,6 +43,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         nav_view.setNavigationItemSelectedListener(this)
         initView()
+        initData()
+    }
+
+    private fun initData() {
+
     }
 
     private fun initView() {
@@ -56,12 +63,18 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         })
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        KActivityMangerUtil.removeActivit(this)
+    }
+
     private fun getDataContent(datas: ArrayList<UtilModel<*>>) {
-        datas.add(UtilModel("KDateUtil", SDDateUtilsActivity::class.java))
-        datas.add(UtilModel("SDLogUtil", SDDateUtilsActivity::class.java))
-        datas.add(UtilModel("SDNetWorkUtil", SDDateUtilsActivity::class.java))
-        datas.add(UtilModel("SDTimerUtil", SDDateUtilsActivity::class.java))
-        datas.add(UtilModel("KTransitionUtil", SDDateUtilsActivity::class.java))
+        datas.add(UtilModel(getString(R.string.title_date_util), KDateUtilsActivity::class.java))
+        datas.add(UtilModel(getString(R.string.title_device_util), KDeviceUtilActivity::class.java))
+        datas.add(UtilModel(getString(R.string.title_log_util), KDateUtilsActivity::class.java))
+        datas.add(UtilModel(getString(R.string.title_network_util), KDateUtilsActivity::class.java))
+        datas.add(UtilModel(getString(R.string.title_timer_util), KDateUtilsActivity::class.java))
+        datas.add(UtilModel(getString(R.string.title_transition_util), KTransitionUtilActivity::class.java))
     }
 
     override fun onBackPressed() {

@@ -5,15 +5,16 @@ import android.content.SharedPreferences
 import java.util.*
 
 /**
- * @Created  SiberiaDante
- * @Describe：
- * @CreateTime: 2018/2/4
- * @UpDateTime:
- * @Email: 2654828081@qq.com
- * @GitHub: https://github.com/SiberiaDante
- * @Blogs: http://www.cnblogs.com/shen-hua/
+ * @CreateTime: 2018/1/29
+ * @UpDateTime:2018/1/29
+ * @CreateBy:SiberiaDante
+ * @Email:2654828081@qq.com
+ * @Github:https://github.com/SiberiaDante
+ * @Blog:http://www.cnblogs.com/shen-hua/
+ * @Describe:
  */
-class SDSPUtil private constructor(context: Context,spName: String) {
+
+class KSPUtil private constructor(context: Context, spName: String) {
     private val sp: SharedPreferences
 
     init {
@@ -201,7 +202,7 @@ class SDSPUtil private constructor(context: Context,spName: String) {
 
     companion object {
 
-        private val sSPMap = HashMap<String,SDSPUtil>()
+        private val sSPMap = HashMap<String, KSPUtil>()
 
         /**
          * 获取SP实例
@@ -210,12 +211,12 @@ class SDSPUtil private constructor(context: Context,spName: String) {
          * *
          * @return [SPUtils]
          */
-        fun getInstance(context: Context, spName: String): SDSPUtil {
+        fun getInstance(context: Context, spName: String): KSPUtil {
             var spName = spName
             if (isSpace(spName)) spName = "spUtils"
-            var sp: SDSPUtil? = sSPMap[spName]
+            var sp: KSPUtil? = sSPMap[spName]
             if (sp == null) {
-                sp = SDSPUtil(context,spName)
+                sp = KSPUtil(context,spName)
                 sSPMap.put(spName, sp)
             }
             return sp
